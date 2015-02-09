@@ -6,11 +6,11 @@
 2) Download and unpack numpy (1.9.1). Modify site.cfg as:
 
     [DEFAULT]
-    library_dirs = /home/ubuntu/workspace/.local/lib
+    library_dirs = /path/to/openblas/lib
 
     [atlas]
     libraries = openblas
-    include_dirs = /home/ubuntu/workspace/.local/include
+    include_dirs = /path/to/openblas/include
 "openblas" appears in [atlas] section because "Numpy will try to build against Atlas by default when available in the system library dirs". The same reason why library_dirs in [DEFAULT] is changed to openblas lib directory.
 
 3) Build & install numpy:
@@ -22,20 +22,20 @@
     
     $ python3 -c "import numpy;numpy.__config__.show()"
     lapack_opt_info:
-        library_dirs = ['/home/ubuntu/workspace/.local/lib']
+        library_dirs = ['/path/to/openblas/lib']
         language = f77
         libraries = ['openblas']
     blas_opt_info:
-        library_dirs = ['/home/ubuntu/workspace/.local/lib']
+        library_dirs = ['/path/to/openblas/lib']
         language = f77
         libraries = ['openblas']
     openblas_info:
-        library_dirs = ['/home/ubuntu/workspace/.local/lib']
+        library_dirs = ['/path/to/openblas/lib']
         language = f77
         libraries = ['openblas']
     blas_mkl_info:
     NOT AVAILABLE
     openblas_lapack_info:
-        library_dirs = ['/home/ubuntu/workspace/.local/lib']
+        library_dirs = ['/path/to/openblas/lib']
         language = f77
         libraries = ['openblas']
