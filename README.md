@@ -19,7 +19,11 @@
     $ python3 setup.py build
     $ sudo python3 setup.py install
 
-4) Verify:
+4) Append openblas lib direcotry in $LD_LIBRARY_PATH if /path/to/openblas is not system default (eg. /usr/lib/):
+
+    $ export LD_LIBRARY_PATH=/path/to/openblas/lib:$LD_LIBRARY_PATH
+
+5) Verify:
     
     $ python3 -c "import numpy;numpy.__config__.show()"
     lapack_opt_info:
